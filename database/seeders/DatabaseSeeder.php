@@ -2,52 +2,33 @@
 
 namespace Database\Seeders;
 
-use Botble\ACL\Database\Seeders\UserSeeder;
-use Botble\Base\Supports\BaseSeeder;
-use Botble\Ecommerce\Database\Seeders\CurrencySeeder;
-use Botble\Ecommerce\Database\Seeders\ReviewSeeder;
-use Botble\Ecommerce\Database\Seeders\ShippingSeeder;
-use Botble\Ecommerce\Database\Seeders\TaxSeeder;
-use Botble\Language\Database\Seeders\LanguageSeeder;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends BaseSeeder
+class DatabaseSeeder extends Seeder
 {
+    /**
+     * Seed the application's database.
+     */
     public function run(): void
     {
-        $this->prepareRun();
+        // \App\Models\User::factory(10)->create();
+
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
 
         $this->call([
-            AnnouncementSeeder::class,
-            UserSeeder::class,
             LanguageSeeder::class,
-            PageSeeder::class,
-            BlogSeeder::class,
-            ContactSeeder::class,
-            TestimonialSeeder::class,
-            FaqSeeder::class,
-            BrandSeeder::class,
-            CurrencySeeder::class,
-            ProductCategorySeeder::class,
-            ProductCollectionSeeder::class,
-            ProductLabelSeeder::class,
-            ProductSeeder::class,
-            ProductAttributeSeeder::class,
-            CustomerSeeder::class,
-            ReviewSeeder::class,
-            TaxSeeder::class,
-            ProductTagSeeder::class,
-            FlashSaleSeeder::class,
-            ShippingSeeder::class,
-            StoreLocatorSeeder::class,
-            ProductOptionSeeder::class,
-            OrderEcommerceSeeder::class,
-            SettingSeeder::class,
-            ThemeOptionSeeder::class,
-            CareerSeeder::class,
+            PanelKeywordSeeder::class,
+            FrontendKeywordSeeder::class,
+            PermissionSeeder::class,
+            PageNameSeeder::class,
+            PageBuilderSeeder::class,
             MenuSeeder::class,
-            WidgetSeeder::class,
+            SubmenuSeeder::class,
         ]);
 
-        $this->finished();
     }
 }
